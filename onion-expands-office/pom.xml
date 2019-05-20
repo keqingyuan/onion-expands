@@ -5,12 +5,12 @@
     <parent>
         <artifactId>onion-expands</artifactId>
         <groupId>cc.kebei</groupId>
-        <version>3.0.0</version>
+        <version>3.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>onion-expands-office</artifactId>
-    <url>https://github.com/hs-web/onion-expands/${artifactId}</url>
+    <url>https://github.com/keqingyuan/onion-expands/${project.artifactId}</url>
     <description>office文档处理工具,导入导出excel,模板导出excel,word</description>
 
     <dependencies>

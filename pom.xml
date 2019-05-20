@@ -7,7 +7,7 @@
     <groupId>cc.kebei</groupId>
     <artifactId>onion-expands</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.0</version>
+    <version>3.0.0-SNAPSHOT</version>
     <modules>
         <module>onion-expands-script</module>
         <module>onion-expands-office</module>
