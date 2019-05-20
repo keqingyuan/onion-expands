@@ -5,7 +5,7 @@
     <groupId>cc.kebei</groupId>
     <artifactId>onion-expands</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.0</version>
+    <version>3.0.1-SNAPSHOT</version>
     <modules>
         <module>onion-expands-script</module>
         <module>onion-expands-office</module>
@@ -68,7 +68,7 @@
                         <version>1.6.3</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>sonatype-releases</serverId>
+                            <serverId>ossrh</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
