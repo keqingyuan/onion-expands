@@ -29,7 +29,7 @@ public class JavaEngine extends ListenerSupportEngine {
     private URL[]               loaderUrl;
 
     public JavaEngine() throws Exception {
-        savePath = System.getProperty("java.io.tmpdir").concat("/org/hsweb/java/engine/");
+        savePath = System.getProperty("java.io.tmpdir").concat("/cc/kebei/java/engine/");
         new File(savePath + "src").mkdirs();
         new File(savePath + "bin").mkdirs();
         classpath = System.getProperty("java.class.path");

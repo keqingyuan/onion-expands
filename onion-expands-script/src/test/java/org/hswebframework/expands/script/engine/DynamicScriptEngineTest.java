@@ -84,7 +84,7 @@ public class DynamicScriptEngineTest {
                 return super.entrySet();
             }
         });
-        engine.addGlobalVariable(Collections.singletonMap("logger", LoggerFactory.getLogger("org.hsweb.script.javascript")));
+        engine.addGlobalVariable(Collections.singletonMap("logger", LoggerFactory.getLogger("cc.kebei.script.javascript")));
 
         engine.compile("test", "logger.error('test')");
         engine.execute("test").getIfSuccess();

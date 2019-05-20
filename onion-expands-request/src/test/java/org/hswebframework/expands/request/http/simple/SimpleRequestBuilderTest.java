@@ -47,14 +47,14 @@ public class SimpleRequestBuilderTest {
     public void testHttp() throws IOException {
         HttpRequestGroup group = builder.http();
 
-        String login = group.request("http://demo.hsweb.me/login")
+        String login = group.request("http://kebei.cc/login")
                 .param("username", "test")
                 .param("password", "123456").post().asString();
 
         System.out.println(login);
-        System.out.println(group.request("http://demo.hsweb.me/online").get().asString());
+        System.out.println(group.request("http://kebei.cc/online").get().asString());
 
-        System.out.println(group.request("http://demo.hsweb.me/user").get().asString());
+        System.out.println(group.request("http://kebei.cc/user").get().asString());
     }
 
     @Test
@@ -82,7 +82,7 @@ public class SimpleRequestBuilderTest {
                 .setting("password", "")
                 .connect()
                 .createMessage()
-                .to("admin@hsweb.me")
+                .to("admin@localhost.me")
                 .content("test..", "text/html")
                 .send();
     }

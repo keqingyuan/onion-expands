@@ -41,7 +41,7 @@ public class CXFWSDLWebServiceRequest implements WebServiceRequest {
     }
 
     public CXFWSDLWebServiceRequest(String url) throws Exception {
-        CODE_DIR = System.getProperty("java.io.tmpdir") + "/org/hsweb/request/ws/" + Math.abs(url.hashCode()) + "/";
+        CODE_DIR = System.getProperty("java.io.tmpdir") + "/cc/kebei/request/ws/" + Math.abs(url.hashCode()) + "/";
         SRC_DIR = CODE_DIR + "src/";
         BIN_DIR = CODE_DIR + "bin/";
         new File(SRC_DIR).mkdirs();

@@ -8,7 +8,7 @@ import java.io.File;
 
 public abstract class AbstractShellBuilder implements ShellBuilder {
     protected String createFile(String text) throws Exception {
-        String tmp = System.getProperty("java.io.tmpdir").concat("/org/hsweb/shell/");
+        String tmp = System.getProperty("java.io.tmpdir").concat("/cc/kebei/shell/");
         File file = new File(tmp);
         file.mkdirs();
         String timeStr = StringUtils.concat("shell_", Math.abs(text.hashCode()));
