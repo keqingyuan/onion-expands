@@ -23,7 +23,7 @@ public class TestWriter {
 
     @Test
     public void testWriteTemplate2() throws Exception {
-        try (InputStream in = new FileInputStream("/home/Kebei/文档/保证书模板.docx");
+        try (InputStream in = new FileInputStream("/Users/kebei/Desktop/保证书模板.docx");
              OutputStream out = new FileOutputStream("target/保证书模板.docx")) {
             //构造 模板所需的变量
             Map<String, Object> vars = new HashMap<>();

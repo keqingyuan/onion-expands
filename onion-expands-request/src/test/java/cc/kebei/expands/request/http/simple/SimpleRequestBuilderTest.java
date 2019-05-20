@@ -1,25 +1,18 @@
 package cc.kebei.expands.request.http.simple;
 
-
-import org.apache.commons.codec.digest.DigestUtils;
 import cc.kebei.expands.request.RequestBuilder;
 import cc.kebei.expands.request.SimpleRequestBuilder;
 import cc.kebei.expands.request.http.HttpRequest;
 import cc.kebei.expands.request.http.HttpRequestGroup;
 import cc.kebei.expands.request.http.Response;
 import cc.kebei.expands.request.webservice.WebServiceRequest;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.net.URL;
+
 
 /**
  * Created by Kebei on 16-6-23.
@@ -34,16 +27,16 @@ public class SimpleRequestBuilderTest {
     }
 
 
-    @Test
+    //    @Test
     public void testHttpDownload() throws Exception {
         long t = System.currentTimeMillis();
         String json = builder.http("http://localhost:8088/file/upload-static")
-                .upload("file", new FileInputStream("/home/Kebei/桌面/logo.jpg"), "test.jpg").asString();
+                .upload("file", new FileInputStream("/Users/kebei/Desktop/logo.jpg"), "test.jpg").asString();
         System.out.println(json);
         System.out.println(System.currentTimeMillis() - t);
     }
 
-    @Test
+    //    @Test
     public void testHttp() throws IOException {
         HttpRequestGroup group = builder.http();
 
@@ -64,8 +57,7 @@ public class SimpleRequestBuilderTest {
         System.out.println(response.asString());
     }
 
-
-    @Test
+    //    @Test
     public void testFtp() throws IOException {
         builder.ftp("192.168.2.142", 2121, "", "")
                 .encode("gbk")
@@ -73,7 +65,7 @@ public class SimpleRequestBuilderTest {
                 .forEach(System.out::println);
     }
 
-    @Test
+    //    @Test
     public void testEmail() throws Exception {
         // TODO: 16-9-29
         builder.email()
@@ -87,10 +79,10 @@ public class SimpleRequestBuilderTest {
                 .send();
     }
 
-    @Test
+    //    @Test
     public void testWebService() throws Exception {
         WebServiceRequest request = builder.webService()
-                .wsdl("/home/Kebei/云文档/项目/apsp/接口文档/WSDL/查询密码验证.wsdl");
+                .wsdl("/Users/kebei/Desktop/云文档/项目/apsp/接口文档/WSDL/查询密码验证.wsdl");
         System.out.println(request.interfaces());
         System.out.println(request.services());
         for (String s : request.interfaces()) {
