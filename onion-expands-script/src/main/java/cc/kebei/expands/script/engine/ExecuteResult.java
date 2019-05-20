@@ -23,9 +23,9 @@ public class ExecuteResult {
     }
 
     /**
-     * use {@link this#get()} or {@link this#getIfSuccess()}
+     * 获取执行结果
      *
-     * @return
+     * @return 结果对象
      */
     @Deprecated
     public Object getResult() {
