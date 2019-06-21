@@ -23,7 +23,7 @@ import java.util.*;
  * 变量引用:  ${name}
  * 表格：
  * 变量引用:  ${name}
- * 循环:  ${for(data in list)} | ${data.name} |${data.addr} |${/for}  。注意:表达式必须在一行</li>
+ * 循环:  ${for(data in list)} | ${data.name} |${data.addr} |${/for}  。注意:表达式必须在一行
  * Created by 浩 on 2015-12-18 0018.
  */
 public class GroovyExpressionRunner implements ExpressionRunner {
