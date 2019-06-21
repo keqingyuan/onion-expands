@@ -15,9 +15,8 @@ import java.util.Map;
  * 单元格赋值如:data.name
  * 三目运算 14:"小孩子":"大人"
  * 循环: for(list in data) ,结束循环: for
- *
+ * Created by qingyuan on 2015-12-16 0016.
  * @version 1.0
- *          Created by qingyuan on 2015-12-16 0016.
  */
 public class GroovyExpressionRunner implements ExpressionRunner {
 
