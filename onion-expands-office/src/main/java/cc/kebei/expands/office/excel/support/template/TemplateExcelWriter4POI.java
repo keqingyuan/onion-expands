@@ -45,6 +45,13 @@ public class TemplateExcelWriter4POI implements ExcelReaderCallBack {
      * @param out  导出输出流
      * @throws Exception 当参数为null时,抛出NullPointerException异常
      */
+    /**
+     * 带参构造方法,所有参数不能为null
+     * @param data 要导出的数据
+     * @param out 导出输出流
+     * @param runner 运行器
+     * @throws Exception 当参数为null时,抛出NullPointerException异常
+     */
     public TemplateExcelWriter4POI(Object data, OutputStream out, ExpressionRunner runner) throws Exception {
         if (data == null || out == null) {
             throw new NullPointerException("data or OutputStream can not be null!");

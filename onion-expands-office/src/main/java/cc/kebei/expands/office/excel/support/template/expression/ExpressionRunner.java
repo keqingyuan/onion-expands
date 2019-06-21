@@ -6,26 +6,24 @@ import java.util.Map;
 
 /**
  * 表达式执行器
- * Created by 浩 on 2015-12-16 0016.
+ * Created by qingyuan on 2015-12-16 0016.
  */
 public interface ExpressionRunner {
+
     /**
      * 设置单元格渲染辅助器
-     *
      * @param helper 单元格渲染辅助器
      */
     void setHelper(CellHelper helper);
 
     /**
      * 获取单元格渲染辅助器
-     *
      * @return 单元格渲染辅助器
      */
     CellHelper getHelper();
 
     /**
      * 设置数据
-     *
      * @param data 数据
      */
     void setData(Map<String, Object> data);
@@ -40,8 +38,7 @@ public interface ExpressionRunner {
 
     /**
      * 执行
-     *
-     * @throws Throwable
+     * @throws Throwable 导出异常
      */
     void run() throws Throwable;
 

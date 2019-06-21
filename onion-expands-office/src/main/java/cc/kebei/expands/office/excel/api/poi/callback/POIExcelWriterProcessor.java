@@ -10,7 +10,7 @@ import java.io.OutputStream;
 
 /**
  * POI，excel文档写出处理器
- * Created by 浩 on 2015-12-16 0016.
+ * Created by qingyuan on 2015-12-16 0016.
  */
 public class POIExcelWriterProcessor implements ExcelWriterProcessor {
 
@@ -53,9 +53,9 @@ public class POIExcelWriterProcessor implements ExcelWriterProcessor {
 
     /**
      * 带参数的构造方法，参数不能为空
-     *
      * @param outputStream 文档输出流
-     * @param workbook     工作簿实例
+     * @param workbook 工作簿实例
+     * @param autoWrite 自动写
      */
     public POIExcelWriterProcessor(OutputStream outputStream, Workbook workbook, boolean autoWrite) {
         this.outputStream = outputStream;

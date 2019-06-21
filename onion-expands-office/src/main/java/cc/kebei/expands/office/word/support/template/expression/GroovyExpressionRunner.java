@@ -20,14 +20,10 @@ import java.util.*;
  * 原理：通过解析word中的表达式,拼接为groovy脚本,然后执行
  * 当前版本已支持:
  * 段落:
- * <ul>
- * <li>变量引用:  ${name}</li>
- * </ul>
+ * 变量引用:  ${name}
  * 表格：
- * <ul>
- * <li>变量引用:  ${name}</li>
- * <li>循环:  ${for(data in list)} | ${data.name} |${data.addr} |${/for}  。注意:表达式必须在一行</li>
- * </ul>
+ * 变量引用:  ${name}
+ * 循环:  ${for(data in list)} | ${data.name} |${data.addr} |${/for}  。注意:表达式必须在一行</li>
  * Created by 浩 on 2015-12-18 0018.
  */
 public class GroovyExpressionRunner implements ExpressionRunner {
@@ -108,7 +104,6 @@ public class GroovyExpressionRunner implements ExpressionRunner {
 
     /**
      * 表达式解析
-     *
      * @param paragraph 段落
      * @return 表达式信息集合
      */
@@ -167,9 +162,8 @@ public class GroovyExpressionRunner implements ExpressionRunner {
     /**
      * 段落内容解析为表达式集合,此方法并不是很好,主要用于表格渲染使用
      * 下一步将进行优化
-     *
      * @param expression 表达式内容
-     * @return
+     * @return List
      */
     protected List<String> parseExpression(String expression) {
         String tmp[] = expression.split("\\$\\{");

@@ -11,13 +11,12 @@ import java.util.List;
 
 /**
  * 段落渲染辅助器
- * Created by 浩 on 2015-12-18 0018.
+ * Created by qingyuan on 2015-12-18 0018.
  */
 public class ParagraphHelper implements WordHelper {
 
     /**
      * 初始化一个段落
-     *
      * @param infoList  表达式信息
      * @param paragraph 段落实例
      */
@@ -71,8 +70,8 @@ public class ParagraphHelper implements WordHelper {
     /**
      * 创建一个新段落,暂未实现此功能
      *
-     * @param paragraph
-     * @param params
+     * @param paragraph 段落
+     * @param params 对象
      */
     public void newParaGraph(XWPFParagraph paragraph, Object... params) {
         initParaGraph(paragraph, params);

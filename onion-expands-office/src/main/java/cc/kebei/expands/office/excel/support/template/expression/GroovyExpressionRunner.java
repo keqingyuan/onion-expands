@@ -12,14 +12,12 @@ import java.util.Map;
 /**
  * 基于Groovy引擎的表达式执行器.
  * 目前支持内容
- * <ul>
- * <li>单元格赋值如:data.name</li>
- * <li>三目运算:data.age>14:"小孩子":"大人"</li>
- * <li>循环: for(list in data) ,结束循环: /for</li>
- * </ul>
+ * 单元格赋值如:data.name
+ * 三目运算 14:"小孩子":"大人"
+ * 循环: for(list in data) ,结束循环: /for
  *
  * @version 1.0
- *          Created by 浩 on 2015-12-16 0016.
+ *          Created by qingyuan on 2015-12-16 0016.
  */
 public class GroovyExpressionRunner implements ExpressionRunner {
 

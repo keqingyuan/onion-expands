@@ -24,7 +24,7 @@ import java.util.function.Supplier;
 
 /**
  * Excel读写操作类
- * Created by 浩 on 2015-12-07 0007.
+ * Created by qingyuan on 2015-12-07 0007.
  */
 public class ExcelIO {
 
@@ -33,7 +33,7 @@ public class ExcelIO {
      *
      * @param inputStream excel输入流
      * @return map对象集合
-     * @throws Exception 读取异常
+     * @throws Exception 导出异常
      */
     public static List<Map<String, Object>> read2Map(InputStream inputStream) throws Exception {
         return read(inputStream, new HashMapWrapper());
@@ -52,7 +52,7 @@ public class ExcelIO {
      * @param <T>          bean泛型
      * @param tClass       javaBean类型
      * @return bean集合
-     * @throws Exception 读取异常
+     * @throws Exception 导出异常
      */
     public static <T> List<T> read2Bean(InputStream inputStream, Map<String, String> headerMapper, Class<T> tClass) throws Exception {
         BeanWrapper wrapper = new BeanWrapper<T>();
@@ -68,7 +68,7 @@ public class ExcelIO {
      * @param wrapper     包装器
      * @param <T>         读取结果泛型
      * @return 读取结果集合
-     * @throws Exception 读取异常
+     * @throws Exception 导出异常
      */
     public static <T> List<T> read(InputStream inputStream, ExcelReaderWrapper<T> wrapper) throws Exception {
         CommonExcelReader<T> reader = new CommonExcelReader<>();
@@ -156,7 +156,7 @@ public class ExcelIO {
      * @param inputStream excel输入流
      * @param wrappers    包装器
      * @return 读取结果
-     * @throws Exception
+     * @throws Exception 导出异常
      */
     public static List<List> read(InputStream inputStream, ExcelReaderWrapper[] wrappers) throws Exception {
         CommonExcelReader reader = new CommonExcelReader();
@@ -173,7 +173,7 @@ public class ExcelIO {
      * @param outputStream 输出流
      * @param headers      表头信息
      * @param dataList     数据集合
-     * @throws Exception
+     * @throws Exception 导出异常
      */
     public static void write(OutputStream outputStream, List<Header> headers, List<Object> dataList) throws Exception {
         ExcelWriterConfig config = new ExcelWriterConfig();

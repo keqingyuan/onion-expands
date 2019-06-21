@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 抽象读取器,实现基本的读取功能，将excel解析为一行一行的数据并调用包装其进行包装
- * Created by 浩 on 2015-12-07 0007.
+ * Created by qingyuan on 2015-12-07 0007.
  */
 public abstract class AbstractExcelReader<T> implements ExcelReader<T> {
 
@@ -83,7 +83,7 @@ public abstract class AbstractExcelReader<T> implements ExcelReader<T> {
      * @param headers  表头信息
      * @param contents 一行的数据
      * @return 包装结果
-     * @throws Exception
+     * @throws Exception 导出异常
      */
     protected T wrapperRow(List<String> headers, List<ExcelReaderCallBack.CellContent> contents, int sheet) throws Exception {
         T instance = getWrapper().newInstance(sheet);//创建实例

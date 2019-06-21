@@ -2,20 +2,20 @@ package cc.kebei.expands.office.excel.config;
 
 /**
  * excel读取回掉
- * Created by 浩 on 2015-12-07 0007.
+ * Created by qingyuan on 2015-12-07 0007.
  */
 public interface ExcelReaderCallBack {
 
     /**
      * 读取一个单元格时回掉
-     *
      * @param content 读取到的单元格内容
+     * @throws Exception 导出异常
      */
     void onCell(CellContent content) throws Exception;
 
     /**
-     * 是否已经手动结束读取，如果已经结束，将立即终止读取。
      *
+     * 是否已经手动结束读取，如果已经结束，将立即终止读取。
      * @return 是否已经结束
      */
     boolean isShutdown();

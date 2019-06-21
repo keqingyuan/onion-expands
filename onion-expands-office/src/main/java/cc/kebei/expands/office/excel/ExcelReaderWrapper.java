@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * excel读取结果包装器,用于将一行数据包装为一个java对象
- * Created by 浩 on 2015-12-07 0007.
+ * Created by qingyuan on 2015-12-07 0007.
  */
 public interface ExcelReaderWrapper<T> {
 
@@ -24,7 +24,7 @@ public interface ExcelReaderWrapper<T> {
      * 获取一个需要包装的实例
      *
      * @return 需要包装的实例
-     * @throws Exception
+     * @throws Exception 导出异常
      */
     T newInstance() throws Exception;
 
@@ -43,8 +43,8 @@ public interface ExcelReaderWrapper<T> {
 
     /**
      * 当填充一个对象结束时,此方法被调用。
-     *
      * @param instance 填充结束的对象
+     * @return boolean
      */
     boolean wrapperDone(T instance);
 
