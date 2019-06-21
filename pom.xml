@@ -5,7 +5,7 @@
     <groupId>cc.kebei</groupId>
     <artifactId>onion-expands</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.0.1</version>
     <modules>
         <module>onion-expands-script</module>
         <module>onion-expands-office</module>
@@ -44,7 +44,7 @@
         <connection>scm:git:https://github.com/keqingyuan/onion-expands.git</connection>
         <developerConnection>scm:git:https://github.com/keqingyuan/onion-expands.git</developerConnection>
         <url>https://github.com/keqingyuan/onion-expands</url>
-        <tag>onion-expands-3.0.0</tag>
+        <tag>onion-expands-3.0.1</tag>
     </scm>
 
     <properties>
