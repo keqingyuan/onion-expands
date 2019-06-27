@@ -45,7 +45,7 @@
         <connection>scm:git:https://github.com/keqingyuan/onion-expands.git</connection>
         <developerConnection>scm:git:https://github.com/keqingyuan/onion-expands.git</developerConnection>
         <url>https://github.com/keqingyuan/onion-expands</url>
-        <tag>onion-expands-3.0.0</tag>
+        <tag>${project.version}</tag>
     </scm>
 
     <properties>

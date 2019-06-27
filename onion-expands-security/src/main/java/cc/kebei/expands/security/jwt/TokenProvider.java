@@ -1,6 +1,8 @@
 package cc.kebei.expands.security.jwt;
 
 import io.jsonwebtoken.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,6 +18,8 @@ import java.util.stream.Collectors;
  * Created by Qingyuan on 2019-06-21.
  */
 public class TokenProvider {
+
+    private final static Logger LOG = LoggerFactory.getLogger(TokenProvider.class);
 
     private static final String AUTHORITIES_KEY = "auth";
 
@@ -99,20 +103,31 @@ public class TokenProvider {
      * @return
      */
     public boolean validateToken(String authToken) {
-        Jws<Claims> claimsJws = null;
+        boolean isValidated = false;
         try {
-            claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
-            return true;
+            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
+            isValidated = true;
         } catch (SignatureException e) {
-            throw new SignatureException("Invalid JWT signature.", e);
+            LOG.info("Invalid JWT signature.");
+            LOG.trace("Invalid JWT signature trace: {}", e);
+            throw e;
         } catch (MalformedJwtException e) {
-            throw new MalformedJwtException("Invalid JWT token.", e);
+            LOG.info("Invalid JWT token.");
+            LOG.trace("Invalid JWT token trace: {}", e);
+            throw e;
         } catch (ExpiredJwtException e) {
-            throw new ExpiredJwtException(claimsJws.getHeader(), (Claims) claimsJws, "Expired JWT token.", e);
+            LOG.info("Expired JWT token.");
+            LOG.trace("Expired JWT token trace: {}", e);
+            throw e;
         } catch (UnsupportedJwtException e) {
-            throw new UnsupportedJwtException("Unsupported JWT token.", e);
+            LOG.info("Unsupported JWT token.");
+            LOG.trace("Unsupported JWT token trace: {}", e);
+            throw e;
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("JWT token compact of handler are invalid.", e);
+            LOG.info("JWT token compact of handler are invalid.");
+            LOG.trace("JWT token compact of handler are invalid trace: {}", e);
+            throw e;
         }
+        return isValidated;
     }
 }
