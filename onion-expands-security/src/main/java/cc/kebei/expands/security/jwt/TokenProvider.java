@@ -103,31 +103,25 @@ public class TokenProvider {
      * @return
      */
     public boolean validateToken(String authToken) {
-        boolean isValidated = false;
         try {
             Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
-            isValidated = true;
+            return true;
         } catch (SignatureException e) {
             LOG.info("Invalid JWT signature.");
             LOG.trace("Invalid JWT signature trace: {}", e);
-            throw e;
         } catch (MalformedJwtException e) {
             LOG.info("Invalid JWT token.");
             LOG.trace("Invalid JWT token trace: {}", e);
-            throw e;
         } catch (ExpiredJwtException e) {
             LOG.info("Expired JWT token.");
             LOG.trace("Expired JWT token trace: {}", e);
-            throw e;
         } catch (UnsupportedJwtException e) {
             LOG.info("Unsupported JWT token.");
             LOG.trace("Unsupported JWT token trace: {}", e);
-            throw e;
         } catch (IllegalArgumentException e) {
             LOG.info("JWT token compact of handler are invalid.");
             LOG.trace("JWT token compact of handler are invalid trace: {}", e);
-            throw e;
         }
-        return isValidated;
+        return false;
     }
 }
