@@ -24,10 +24,10 @@ public class TokenProvider {
     private static final String AUTHORITIES_KEY = "auth";
 
     private String secretKey;
-    // Token is valid 24 hours
-    private long tokenValidityInMilliseconds = 86400;
+    // Token is valid a half hours
+    private long tokenValidityInMilliseconds = 1800000;
     // Token is valid 72 hours
-    private long tokenValidityInMillisecondsForRememberMe = 2592000;
+    private long tokenValidityInMillisecondsForRememberMe = 259200000;
 
     /**
      * 构造函数1
@@ -39,13 +39,13 @@ public class TokenProvider {
      * 构造函数2
      *
      * @param secretKey
-     * @param tokenValidityInMilliseconds
-     * @param tokenValidityInMillisecondsForRememberMe
+     * @param tokenValidityInSeconds
+     * @param tokenValidityInSecondsForRememberMe
      */
-    public TokenProvider(String secretKey, long tokenValidityInMilliseconds, long tokenValidityInMillisecondsForRememberMe) {
+    public TokenProvider(String secretKey, long tokenValidityInSeconds, long tokenValidityInSecondsForRememberMe) {
         this.secretKey = secretKey;
-        this.tokenValidityInMilliseconds = 1000 * tokenValidityInMilliseconds;
-        this.tokenValidityInMillisecondsForRememberMe = 1000 * tokenValidityInMillisecondsForRememberMe;
+        this.tokenValidityInMilliseconds = 1000 * tokenValidityInSeconds;
+        this.tokenValidityInMillisecondsForRememberMe = 1000 * tokenValidityInSecondsForRememberMe;
     }
 
     /**
