@@ -30,7 +30,7 @@ public class AuditingAnnotationInterceptor implements Interceptor {
     Object parameter = invocation.getArgs()[1];
     Field[] fields = parameter.getClass().getDeclaredFields();
     Timestamp timestamp = Timestamp.from(Instant.now());
-    String user = "unknown";
+    String user = "Anonymous";
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     if (authentication != null) {
       user = SecurityContextHolder.getContext().getAuthentication().getName();

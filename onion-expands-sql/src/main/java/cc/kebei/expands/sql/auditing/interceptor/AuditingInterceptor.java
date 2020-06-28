@@ -25,7 +25,7 @@ public class AuditingInterceptor implements Interceptor {
     Object parameter = invocation.getArgs()[1];
     if (parameter instanceof AbstractAuditingEntity) {
       //Field[] fields = parameter.getClass().getDeclaredFields();
-      String user = "unknown";
+      String user = "Anonymous";
       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
       if (authentication != null) {
         user = SecurityContextHolder.getContext().getAuthentication().getName();
