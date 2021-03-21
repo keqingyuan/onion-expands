@@ -1,10 +1,8 @@
 package cc.kebei.expands.template;
 
-import java.util.Map;
-
 /**
- * Created by 浩 on 2016-03-21 0021.
+ * Created by KeBei on 2021-3-21.
  */
 public interface TemplateRender {
-    String render(Map<String, Object> vars) throws Exception;
+    String render(Object vars) throws Exception;
 }
